@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    /> -->
+  </head>
+  <body
+    class="w-auto h-auto font-sans;"
+    style="background-image: url('/image/background.png')"
+  >
+    <div class="flex items-center justify-center h-screen">
+      <div
+        class="bg-gray-100 w-auto h-auto flex flex-col rounded-xl shadow-lg p-8"
+      >
+        <h2 class="font-bold text-2xl mb-4">SignIn</h2>
+
+        <form action="" class="flex flex-col gap-4">
+          <input
+            class="bg-transparent border-b border-black py-2 px-1 outline-none placeholder-gray-500"
+            type="text"
+            name="email"
+            placeholder="Email"
+          />
+          <input
+            class="bg-transparent border-b border-black py-2 px-1 outline-none placeholder-gray-500"
+            type="text"
+            name="password"
+            placeholder="Password"
+          />
+          <div class="flex items-center justify-between">
+            <label class="flex items-center">
+              <input
+                class="mr-2 border border-gray-400 rounded p-1"
+                type="checkbox"
+                name="remember"
+              />
+              <span class="text-xs">Remember me</span>
+            </label>
+            <div class="w-6"></div>
+            <a href="#" class="text-blue-500 hover:underline text-xs"
+              >Forgot Password</a
+            >
+          </div>
+          <button class="bg-[#0560FD] rounded-xl text-white py-3">LogIn</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
