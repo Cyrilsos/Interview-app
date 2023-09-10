@@ -32,15 +32,15 @@
     </div>
 
     <script>
-      // Get access to the user's camera
+      // Get access to the user's cam
       navigator.mediaDevices
         .getUserMedia({ video: true })
         .then(function (stream) {
-          // Assign the camera stream to the video element
+          // Assign the cam stream to the vid element
           var videoElement = document.getElementById("camera");
           videoElement.srcObject = stream;
 
-          // Once the video stream is loaded, display it in the camera-output div
+          // Once the vid stream is loaded, display it in the camera-output div
           videoElement.onloadedmetadata = function (e) {
             var outputDiv = document.getElementById("camera-output");
             outputDiv.appendChild(videoElement);
