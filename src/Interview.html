@@ -15,18 +15,40 @@
       </div>
     </div>
     <div
-      class="box-border bg-white rounded-xl shadow-md p-8 ml-4 mt-10 mr-4 mb-12 h-4/5"
+      class="box-border bg-white rounded-xl shadow-md p-8 ml-4 mt-10 mr-4 mb-12 h-4/5 flex flex-col justify-center items-center"
     >
-      <div
-        class="box-border h-5/6 w-auto bg-gray-100 rounded-lg p-8 ml-4 mt-10 mr-4"
-      >
-        #camara record
-      </div>
+<p class="mb-10">#Questions</p>
+    <div class="flex">
+      <video id="camera" autoplay class="w-auto h-auto"></video>
+      <div id="camera-output"></div>
+    </div>
+
       <button
-        class="text-white font-poppins text-sm bg-[#0560FD] hover:bg-blue-500 py-2 px-4 rounded-xl mx-auto mt-2 h-9 w-auto flex items-center"
+        class="text-white font-poppins text-sm bg-[#0560FD] hover:bg-blue-500 py-2 px-4 rounded-xl mx-auto mt-16 h-9 w-auto flex items-center"
       >
         Finished
       </button>
     </div>
+    </div>
+
+    <script>
+      // Get access to the user's camera
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then(function (stream) {
+          // Assign the camera stream to the video element
+          var videoElement = document.getElementById("camera");
+          videoElement.srcObject = stream;
+
+          // Once the video stream is loaded, display it in the camera-output div
+          videoElement.onloadedmetadata = function (e) {
+            var outputDiv = document.getElementById("camera-output");
+            outputDiv.appendChild(videoElement);
+          };
+        })
+        .catch(function (error) {
+          console.error("Error accessing the camera:", error);
+        });
+    </script>
   </body>
 </html>
