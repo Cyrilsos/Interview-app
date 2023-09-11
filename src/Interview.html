@@ -49,6 +49,27 @@
         .catch(function (error) {
           console.error("Error accessing the camera:", error);
         });
+
+           // Capture and send video data when the "Finished" button is pressed
+      var finishedButton = document.querySelector("button");
+      finishedButton.addEventListener("click", function () {
+        var videoElement = document.getElementById("camera");
+        var canvas = document.createElement("canvas");
+        canvas.width = videoElement.videoWidth;
+        canvas.height = videoElement.videoHeight;
+        var context = canvas.getContext("2d");
+        context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+        var videoData = canvas.toDataURL("image/jpeg"); // change the format as needed
+
+        // Set the videoData in the hidden input field
+        var videoDataInput = document.getElementById("videoData");
+        videoDataInput.value = videoData;
+
+        // Submit the form to send the video data to the server
+        var videoForm = document.getElementById("videoForm");
+        videoForm.submit();
+        });
     </script>
   </body>
 </html>
