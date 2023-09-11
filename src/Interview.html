@@ -23,53 +23,88 @@
       <div id="camera-output"></div>
     </div>
 
-      <button
+     <button
+        id="startRecording"
+        class="text-white font-poppins text-sm bg-[#0560FD] hover:bg-blue-500 py-2 px-4 rounded-xl mx-auto mt-16 h-9 w-auto flex items-center"
+      >startRecording</button>
+
+      <button id="finishRecording"
         class="text-white font-poppins text-sm bg-[#0560FD] hover:bg-blue-500 py-2 px-4 rounded-xl mx-auto mt-16 h-9 w-auto flex items-center"
       >
         Finished
       </button>
+      <a
+        id="downloadLink"
+        class="hidden"
+        download="interview_recording.webm"
+      ></a>
     </div>
     </div>
 
-    <script>
-      // Get access to the user's cam
+     <script>
+      let mediaRecorder;
+      let recordedChunks = [];
+      const startButton = document.getElementById("startRecording");
+      const finishButton = document.getElementById("finishRecording");
+      const cameraElement = document.getElementById("camera");
+      const downloadLink = document.getElementById("downloadLink");
+
+      startButton.addEventListener("click", startRecording);
+      finishButton.addEventListener("click", finishRecording);
+
       navigator.mediaDevices
         .getUserMedia({ video: true })
         .then(function (stream) {
-          // Assign the cam stream to the vid element
-          var videoElement = document.getElementById("camera");
-          videoElement.srcObject = stream;
+          cameraElement.srcObject = stream;
+          mediaRecorder = new MediaRecorder(stream);
 
-          // Once the vid stream is loaded, display it in the camera-output div
-          videoElement.onloadedmetadata = function (e) {
-            var outputDiv = document.getElementById("camera-output");
-            outputDiv.appendChild(videoElement);
+          mediaRecorder.ondataavailable = function (event) {
+            if (event.data.size > 0) {
+              recordedChunks.push(event.data);
+            }
+          };
+
+          mediaRecorder.onstop = function () {
+            const blob = new Blob(recordedChunks, { type: "video/webm" });
+            const url = URL.createObjectURL(blob);
+            downloadLink.href = url;
+            downloadLink.style.display = "block";
+            downloadLink.style.textAlign = "center";
           };
         })
         .catch(function (error) {
           console.error("Error accessing the camera:", error);
         });
 
-           // Capture and send video data when the "Finished" button is pressed
-      var finishedButton = document.querySelector("button");
-      finishedButton.addEventListener("click", function () {
-        var videoElement = document.getElementById("camera");
-        var canvas = document.createElement("canvas");
-        canvas.width = videoElement.videoWidth;
-        canvas.height = videoElement.videoHeight;
-        var context = canvas.getContext("2d");
-        context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+      function startRecording() {
+        recordedChunks = [];
+        mediaRecorder.start();
+        startButton.disabled = true;
+        finishButton.disabled = false;
+      }
 
-        var videoData = canvas.toDataURL("image/jpeg"); // change the format as needed
+      function finishRecording() {
+        mediaRecorder.stop();
+        startButton.disabled = false;
+        finishButton.disabled = true;
 
-        // Set the videoData in the hidden input field
-        var videoDataInput = document.getElementById("videoData");
-        videoDataInput.value = videoData;
+        // Send the recorded vid
+        const blob = new Blob(recordedChunks, { type: "video/webm" });
+        const formData = new FormData();
+        formData.append("video", blob, "interview_recording.webm");
 
-        // Submit the form to send the video data to the server
-        var videoForm = document.getElementById("videoForm");
-        videoForm.submit();
-        });
+        //url
+        fetch("your-server-url", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            console.log("Video uploaded successfully:", response);
+          })
+          .catch((error) => {
+            console.error("Error uploading video:", error);
+          });
+      }
     </script>
   </body>
 </html>
