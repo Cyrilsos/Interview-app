@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
+    </style>
+  </head>
+  <body class="h-screen bg-blue-50 sans-serif">
+    <div class="flex h-20 w-auto bg-white justify-between items-center">
+      <h1 class="font-sans font-poppins text-4xl m-4">Logo</h1>
+      <!-- <img src="" alt="" class="w-8 h-8 rounded object-cover"> -->
+      <div class="text-sm font-poppins ml-auto mr-10">
+        <p class="text text-base font-medium">John Wick</p>
+        <p>johnwick@example.com</p>
+      </div>
+      <button
+        class="text-white font-poppins text-sm bg-[#0560FD] hover:bg-blue-500 py-2 px-4 rounded-xl mr-4 mt-2 h-9 w-auto flex items-center"
+      >
+        Logout
+      </button>
+    </div>
+    <div class="flex">
+      <div class="flex flex-col h-full w-64 p-8">
+        <a
+          class="items-center py-2 px4 hover:bg-[#0560FD] hover:text-white w-40 rounded-xl text-center"
+        >
+          Answers
+        </a>
+        <a
+          class="items-center py-2 px4 bg-[#0560FD] text-white w-40 rounded-xl mt-5 text-center"
+        >
+          Interview
+        </a>
+        <a
+          class="items-center py-2 px4 hover:bg-[#0560FD] hover:text-white w-40 rounded-xl mt-5 text-center"
+        >
+          Canidates
+        </a>
+      </div>
+      <div class="bg-white rounded-xl mt-4 p-8 ml-4 mr-4 w-screen items-center">
+        <div class="pb-10">
+          <button
+            class="items-center py-2 px4 hover:bg-[#0560FD] hover:text-white w-20 rounded-xl text-center font-semibold"
+          >
+            View
+          </button>
+          <button
+            class="py-2 px-4 bg-[#0560FD] text-white w-20 rounded-xl mt-5 text-center font-semibold"
+          >
+            Add
+          </button>
+        </div>
+         <h1>Number of Interview</h1>
+        <div class="flex">
+          <form>
+            <input title="NoInt" class="w-52 box-border border-gray-600 border-2 rounded-md mt-4 mr-4 "></input>
+          </form>
+          <button class="text-white text-sm bg-slate-500 hover:bg-blue-500 px-2 rounded-md h-7 w-auto mt-4  ">Submit</button>
+        </div>
+        <div title="answer div" class="flex mt-10">
+        <div>
+          <h1 class="pt-4">Question</h1>
+          <form>
+            <input title="Name" class="w-52 box-border border-gray-600 border-2 rounded-md mt-2 mr-4 text-center "></input>
+          </form>
+      </div>
+      <div class="flex flex-col items-center">
+        <h1 class="pt-4">Answer limit</h1>
+        <form>
+            <input title="Name" class="w-16 box-border border-gray-600 border-2 rounded-md mt-2 mr-4 text-center "></input>
+          </form>
+      </div>
+       
+    </div>
+    <button
+        class="text-white  text-sm bg-[#0560FD] hover:bg-blue-500 py-2 px-4 rounded-xl mx-auto mt-16 h-9 w-auto flex items-center justify-center"
+      >
+        Submit
+      </button>
+    </div>
+  </body>
+</html>
