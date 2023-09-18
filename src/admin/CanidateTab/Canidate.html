@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
-    </style>
   </head>
-  <body class="h-screen bg-blue-50 sans-serif">
+  <body class="h-screen bg-blue-50 font-sans">
     <div class="flex h-20 w-auto bg-white justify-between items-center">
       <h1 class="font-sans font-poppins text-4xl m-4">Logo</h1>
       <!-- <img src="" alt="" class="w-8 h-8 rounded object-cover"> -->
-      <div class="text-sm font-poppins ml-auto mr-10">
+      <div class="text-sm font-sans ml-auto mr-10">
         <p class="text text-base font-medium">John Wick</p>
         <p>johnwick@example.com</p>
       </div>
@@ -25,21 +22,21 @@
     </div>
     <div class="flex">
       <div class="flex flex-col h-full w-64 p-8">
-        <a
-          class="items-center py-2 px4 hover:bg-[#0560FD] hover:text-white w-40 rounded-xl text-center"
+        <button
+          class="items-center py-2 px-4 hover:bg-[#0560FD] hover:text-white w-40 rounded-xl mt-5"
         >
           Answers
-        </a>
-        <a
-          class="items-center py-2 px4 bg-[#0560FD] text-white w-40 rounded-xl mt-5 text-center"
+        </button>
+        <button
+          class="items-center py-2 px-4 hover:bg-[#0560FD] hover:text-white w-40 rounded-xl mt-5"
         >
           Interview
-        </a>
-        <a
-          class="items-center py-2 px4 hover:bg-[#0560FD] hover:text-white w-40 rounded-xl mt-5 text-center"
+        </button>
+        <button
+          class="items-center py-2 px-4 bg-[#0560FD] text-white w-40 rounded-xl mt-5"
         >
           Canidates
-        </a>
+        </button>
       </div>
       <div class="bg-white rounded-xl mt-4 p-8 ml-4 mr-4 w-screen items-center">
         <div class="pb-10">
@@ -49,46 +46,31 @@
             Add
           </button>
         </div>
-        <table class="min-w-full text-left text-sm font-light">
+        <table class="min-w-full text-left text-sm font-light text-center">
           <thead class="bg-white font-medium">
-            <tr>
-            
-              <th scope="col" class="px-6 py-4 font-bold text-gray-600">ID</th>
-              <th scope="col" class="px-6 py-4 font-bold text-gray-600">
-                Question
-              </th>
+            <tr class="py-4">
+              <th scope="col" class="font-bold text-gray-600">ID</th>
 
-              <th scope="col" class="px-6 py-4 font-bold text-gray-600">
-                Active For
-              </th>
-              <th
-                scope="col"
-                class="px-6 py-4 text-center font-bold text-gray-600"
-              >
+              <th scope="col" class="font-bold text-gray-600">Group</th>
+
+              <th scope="col" class="font-bold text-gray-600">Name</th>
+
+              <th scope="col" class="font-bold text-gray-600">Email</th>
+
+              <th scope="col" class="font-bold text-gray-600">Password</th>
+              <th scope="col" class="px-6 text-center font-bold text-gray-600">
                 Action
               </th>
             </tr>
           </thead>
           <tbody>
             <tr class="bg-neutral-100 dark:border-neutral-500">
-              <td class="whitespace-nowrap px-6 py-4">1</td>
-              <td class="whitespace-nowrap px-6 py-4">Introduce your self</td>
-              <td class="whitespace-nowrap px-6 py-4">1,2</td>
-              <td class="whitespace-nowrap px-6 py-4 flex justify-center">
-                <form>
-                  <button
-                    class="hover:bg-blue-500 hover:text-white font-semibold py-1 px-4 rounded-xl"
-                  >
-                    Add Group
-                  </button>
-                </form>
-                <form>
-                 <button
-                    class="hover:bg-blue-500 hover:text-white font-semibold py-1 px-4 rounded-xl"
-                  >
-                    Remove Group
-                  </button>
-                </form>
+              <td>43</td>
+              <td>1</td>
+              <td>Jhone</td>
+              <td>Jhone@gmail.com</td>
+              <td>121212</td>
+              <td class="whitespace-nowrap py-4 flex justify-center">
                 <form>
                   <button
                     class="hover:bg-blue-500 hover:text-white font-semibold py-1 px-4 rounded-xl"
@@ -106,24 +88,12 @@
               </td>
             </tr>
             <tr class="bg-white">
-               <td class="whitespace-nowrap px-6 py-4">4</td>
-              <td class="whitespace-nowrap px-6 py-4">What are your skills?</td>
-              <td class="whitespace-nowrap px-6 py-4">1,2</td>
+              <td class="px-6">41</td>
+              <td>10</td>
+              <td>Jhon</td>
+              <td>Jhon@gmail.com</td>
+              <td>12122</td>
               <td class="whitespace-nowrap px-6 py-4 flex justify-center">
-                <form>
-                  <button
-                    class="hover:bg-blue-500 hover:text-white font-semibold py-1 px-4 rounded-xl"
-                  >
-                    Add Group
-                  </button>
-                </form>
-                <form>
-                 <button
-                    class="hover:bg-blue-500 hover:text-white font-semibold py-1 px-4 rounded-xl"
-                  >
-                    Remove Group
-                  </button>
-                </form>
                 <form>
                   <button
                     class="hover:bg-blue-500 hover:text-white font-semibold py-1 px-4 rounded-xl"
@@ -141,24 +111,12 @@
               </td>
             </tr>
             <tr class="bg-neutral-100 dark:border-neutral-500">
-             <td class="whitespace-nowrap px-6 py-4">15</td>
-              <td class="whitespace-nowrap px-6 py-4">Are you willing to relocate?</td>
-              <td class="whitespace-nowrap px-6 py-4">1,2</td>
+              <td>43</td>
+              <td>19</td>
+              <td>hone</td>
+              <td>hone@gmail.com</td>
+              <td>141212</td>
               <td class="whitespace-nowrap px-6 py-4 flex justify-center">
-                <form>
-                  <button
-                    class="hover:bg-blue-500 hover:text-white font-semibold py-1 px-4 rounded-xl"
-                  >
-                    Add Group
-                  </button>
-                </form>
-                <form>
-                 <button
-                    class="hover:bg-blue-500 hover:text-white font-semibold py-1 px-4 rounded-xl"
-                  >
-                    Remove Group
-                  </button>
-                </form>
                 <form>
                   <button
                     class="hover:bg-blue-500 hover:text-white font-semibold py-1 px-4 rounded-xl"
@@ -174,7 +132,6 @@
                   </button>
                 </form>
               </td>
-            </tr>
             </tr>
           </tbody>
         </table>
