@@ -5,30 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    /> -->
   </head>
   <body
     class="w-auto h-auto font-sans;"
     style="background-image: url('/image/background.png')"
   >
     <div class="flex items-center justify-center h-screen">
-      <div
-        class="bg-gray-100 w-auto h-auto flex flex-col rounded-xl shadow-lg p-8"
-      >
-        <h2 class="font-bold text-2xl mb-4">SignIn</h2>
+      <div class="bg-white w-96 h-96 flex flex-col rounded-xl shadow-lg p-8">
+        <h2 class="font-light text-2xl mb-4 pb-5 mt-10">Sign In!</h2>
 
         <form action="" class="flex flex-col gap-4">
           <input
-            class="bg-transparent border-b border-black py-2 px-1 outline-none placeholder-gray-500"
+            class="bg-transparent border-b border-gray-400 py-2 px-1 outline-none placeholder-gray-500 font-light"
             type="text"
             name="email"
             placeholder="Email"
           />
           <input
-            class="bg-transparent border-b border-black py-2 px-1 outline-none placeholder-gray-500"
+            class="bg-transparent border-b border-gray-400 py-2 px-1 outline-none placeholder-gray-500 font-light"
             type="text"
             name="password"
             placeholder="Password"
@@ -40,16 +34,17 @@
                 type="checkbox"
                 name="remember"
               />
-              <span class="text-xs">Remember me</span>
+              <span class="text-xs font-light ">Remember me</span>
             </label>
-            <div class="w-6"></div>
+            <!-- <div class="w-6"></div>
             <a href="#" class="text-blue-500 hover:underline text-xs"
               >Forgot Password</a
             >
-          </div>
-          <button class="bg-[#0560FD] rounded-xl text-white py-3">LogIn</button>
+          </div> -->
+          
         </form>
-      </div>
-    </div>
+      </div> 
+      <button class="bg-[#0560FD] rounded-xl text-white py-3 mt-9 hover:bg-blue-500">LogIn</button>
+    </div>   
   </body>
 </html>
